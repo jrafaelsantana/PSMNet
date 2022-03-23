@@ -17,3 +17,16 @@ python finetune.py --maxdisp 192 \
                    --loadmodel ./trained/checkpoint_10.tar \
                    --savemodel ./trained/
 
+python finetune.py --maxdisp 192 \
+                   --model stackhourglass \
+                   --datatype 2015 \
+                   --epochs 300 \
+                   --savemodel ./trained/
+
+deepspeed finetune.py --maxdisp 192 \
+                   --model stackhourglass \
+                   --datatype 2015 \
+                   --epochs 300 \
+                   --savemodel ./trained/ \
+                   --deepspeed --deepspeed_config ds_config.json
+
